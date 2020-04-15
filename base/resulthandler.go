@@ -4,20 +4,16 @@
 package base
 
 import (
+	erroresult "GoProject/models/response"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
 	"github.com/astaxie/beego/orm"
-	erroresult "live-teacher-server/models/response"
 	"net/http"
 )
 
 const (
 	ErrSystemMsg   = "系统错误"
 	ErrForbidenMsg = "无访问权限"
-)
-
-var (
-	ErrNoData = &erroresult.ErrorResult{Status: 404, Msg: "找不到数据"}
 )
 
 type ResultHandlerController struct {
