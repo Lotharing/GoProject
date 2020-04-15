@@ -4,6 +4,7 @@
 package initial
 
 import (
+	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
@@ -29,4 +30,6 @@ func InitDb() {
 	db.SetConnMaxLifetime(time.Duration(ttl) * time.Second)
 
 	orm.Debug = beego.AppConfig.DefaultBool("db.showSql", false)
+
+	fmt.Println("数据库连接完毕...")
 }
